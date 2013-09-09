@@ -46,12 +46,20 @@ public class TestTwoA {
     public void test_isOddProd() {
 	int[] array1 = {2,4,6,8,10};
 	assertEquals("all evens", false, TwoA.isOddProd(array1));
+	int[] array2 = {1,3,5,7,9};
+	assertEquals("all odds", true, TwoA.isOddProd(array2));
+	int[] array3= {2,4,6,7,9};
+	assertEquals("mixed", true, TwoA.isOddProd(array3));
 	
     //}
     } // test_isOddProd
     
     @Test
     public void test_allDistinct() {
+	int[] array1={2,4,5,6,7,2,10};
+	assertEquals("array1",false,TwoA.allDistinct(array1));
+	int[] array2={2,4,5,6,7,10};
+	assertEquals("array2",false,TwoA.allDistinct(array2));
 	
     } // test_allDistinct
 
@@ -60,6 +68,9 @@ public class TestTwoA {
     public void test_reverseInts() {
 	int[] array1={2,4,5,6,7,2,10};
 	int[] ar1rev={10,2,7,6,5,4,2};
-	assertEquals("array1",ar1rev,TwoA.reverseInts(array1));
+	assertEquals("array1",ar1rev,TwoA.reverseInts(array1)); //comparing memory values, what in the world?
+	int[] array2={2,4};
+	int[] ar2rev={4,2};
+	assertEquals("array2",ar2rev,TwoA.reverseInts(array2));
     }
 }
