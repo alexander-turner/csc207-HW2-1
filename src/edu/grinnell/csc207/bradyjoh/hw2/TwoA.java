@@ -51,21 +51,19 @@ public class TwoA {
 
     public static boolean allDistinct(int[] ints){
 	if(ints.length <= 1) {
-	    return false;
+	    return true;
 	}
-	else {
-	    for(int x = 0; x<(ints.length-1);x++)
-	    {int num=ints[x];
+	for(int x = 0; x<(ints.length-1);x++){
+	    int num=ints[x];
 
-	    for(int y=x+1;y<(ints.length-1);y++)
-	    {
+	    for(int y=x+1; y<ints.length; y++){
 		if (num==ints[y])
 		    return true;
 	    }
 
-	    } //for
-	    return false;
-	}
+	} //for
+	return false;
+
     }
 
     public static int[] reverseInts(int[] ints){
@@ -73,15 +71,11 @@ public class TwoA {
 	    return ints;
 	}
 	else {
-	    int i = 0;
-	    int j = ints.length-1;
-	    while(i<j)
+	    for (int i = 0; i<ints.length-i; i++)
 	    {
 		int hold = ints[i];
-		ints[i]=ints[j];
-		ints[j]=hold;
-		i++;
-		j--;
+		ints[i]=ints[ints.length-i];
+		ints[ints.length-i]=hold;
 	    }
 	    return ints;
 	}
