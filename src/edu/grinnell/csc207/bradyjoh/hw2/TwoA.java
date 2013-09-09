@@ -31,18 +31,48 @@ public class TwoA {
 	    return sum;
     }
     
-    public static boolean isOddProd (int[] n)
+    public static boolean isOddProd (int[] ints)
     { return true;
     
     }
     
-    public static boolean allDistinct(int[] n){
-	return true;
+    public static boolean allDistinct(int[] ints){
+	if(ints.length <= 1) {
+		return false;
+	}
+	else {
+	    for(int x = 0; x<(ints.length-1);x++)
+	    {int num=ints[x];
+	    	
+		    for(int y=x+1;y<(ints.length-1);y++)
+		    {
+			if (num==ints[y])
+				return true;
+		    }
+		
+	    } //for
+	    return false;
+	}
     }
 
-    public static boolean reverseInts(int[] n){
-	return true;
+    public static int[] reverseInts(int[] ints){
+	if(ints.length <= 1) {
+		return ints;
+	}
+	else {
+	    int i = 0;
+	    int j = ints.length-1;
+	    while(i<j)
+	    {
+		int hold = ints[i];
+		ints[i]=ints[j];
+		ints[j]=hold;
+		i++;
+		j--;
+	    }
+	    return ints;
+	}
 	
-    }
+    } //reverseInts - idea from http://stackoverflow.com/questions/2137755/how-do-i-reverse-an-int-array-in-java
 }
 
