@@ -46,7 +46,7 @@ public class TestTwoA {
     }
     @Test
     public void test_isOddProd() {
-	//assertEquals("all evens", true, twoA.isOddProd([1,3,5,7,9]));
+	assertEquals("all evens", true, twoA.isOddProd([1,3,5,7,9]));
 	
     //}
     }
