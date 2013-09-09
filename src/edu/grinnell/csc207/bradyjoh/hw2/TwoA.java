@@ -1,6 +1,6 @@
 package edu.grinnell.csc207.bradyjoh.hw2;
 
-public class twoA {
+public class TwoA {
     
   
     public static boolean isMultiple(long a, long b) 
@@ -31,11 +31,18 @@ public class twoA {
 	    return sum;
     }
     
-    public static boolean isOddProd (int n)
+    public static boolean isOddProd (int[] n)
     { return true;
     
     }
     
-    
+    public static boolean allDistinct(int[] n){
+	return true;
+    }
+
+    public static boolean reverseInts(int[] n){
+	return true;
+	
+    }
 }
 
