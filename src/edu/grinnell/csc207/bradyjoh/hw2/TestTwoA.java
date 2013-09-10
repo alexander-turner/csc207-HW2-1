@@ -16,10 +16,9 @@ public class TestTwoA {
 	assertEquals("Failing case",false,TwoA.isMultiple(5,2));
 	assertEquals("zero and Negative",true,TwoA.isMultiple(0,-20));
 	assertEquals("zero and zero",false,TwoA.isMultiple(0,0));
-	for (int i = -1000; i<1000; i++){
+	for (int i = -1000; i<1000; i++)
 	    if(i!=0)
 		assertEquals("multiples of 2",true,TwoA.isMultiple(2*i,i));
-	}
     } // test_isMultiple
     
     @Test
@@ -50,8 +49,6 @@ public class TestTwoA {
 	assertEquals("all odds", true, TwoA.isOddProd(array2));
 	int[] array3= {2,4,6,7,9};
 	assertEquals("mixed", true, TwoA.isOddProd(array3));
-	
-    //}
     } // test_isOddProd
     
     @Test
@@ -60,7 +57,6 @@ public class TestTwoA {
 	assertEquals("array1",false,TwoA.allDistinct(array1));
 	int[] array2={2,4,5,6,7,10};
 	assertEquals("array2",false,TwoA.allDistinct(array2));
-	
     } // test_allDistinct
 
     
@@ -68,9 +64,9 @@ public class TestTwoA {
     public void test_reverseInts() {
 	int[] array1={2,4,5,6,7,2,10};
 	int[] ar1rev={10,2,7,6,5,4,2};
-	assertEquals("array1",ar1rev,TwoA.reverseInts(array1)); //comparing memory values, what in the world?
+	assertArrayEquals("array1",ar1rev,TwoA.reverseInts(array1));
 	int[] array2={2,4};
 	int[] ar2rev={4,2};
-	assertEquals("array2",ar2rev,TwoA.reverseInts(array2));
-    }
+	assertArrayEquals("array2",ar2rev,TwoA.reverseInts(array2));
+    } // test_reverseInts - calls from stackoverflow.com/questions/4228161/comparing-arrays-in-junit-assertions-concise-built-in-way
 }
