@@ -11,7 +11,7 @@ public class TwoB {
      */
     public static int average(int left, int right) {
 	if(left>(Integer.MAX_VALUE/2) && right>(Integer.MAX_VALUE/2)) //alternatively, (left==right)
-	    return left;
+	    return -1;
 	else
         return (left + right) / 2;
     } // average(int,int)
