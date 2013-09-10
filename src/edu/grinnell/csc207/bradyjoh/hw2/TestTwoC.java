@@ -5,49 +5,90 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class TestTwoC {
-
+    
     @Test
     public void test_decimalRep() {
-	assertEquals("",3.5,TwoC.decimalRep(7/2));
+    	testNum = Rational.create(7,2);
+	assertEquals("Decimal representation of 7/2",3.5,testNum.decimalRep);
     }
-    @Test
-    public void test_denominator() {
-	assertEquals("",2,TwoC.denominator(3.5));
-    }
-    @Test
-    public void test_square() {
-	assertEquals("",400,TwoC.square(20));
-    }
+    
     @Test
     public void test_numerator() {
-	assertEquals("",9,TwoC.numerator(4.5));
+    	testNum = Rational.create(7,2);
+	assertEquals("Numerator of 7/2",7,testNum.numerator);
     }
+    
+    @Test
+    public void test_denominator() {
+    	testNum = Rational.create(7,2);
+	assertEquals("Denominator of 7/2",2,testNum.denominator);
+    }
+    
+    @Test
+    public void test_square() {
+    	testNum = Rational.create(7,2);
+	assertEquals("Square of 7/2",49/4,testNum.square);
+    }
+    
     @Test
     public void test_floor() {
-	assertEquals("",5,TwoC.floor(5.5348));
+    	testNum = Rational.create(7,2);
+	assertEquals("Floor of 3.5",3,testNum.floor);
     }
+    
     @Test
     public void test_ceiling() {
-	assertEquals(78343,TwoC.ceiling(78342.2342));
+       	testNum = Rational.create(7,2);
+	assertEquals("Ceiling of 3.5",4,testNum.ceiling);
     }
-    @Test
-    public void test_reciprocal() {
-	assertEquals("",0.068856,TwoC.reciprocal(14.523));
-    }
-    @Test
-    public void test_sqrt() {
-	assertEquals("",4,TwoC.sqrt(16));
-    }
-    @Test
-    public void test_string() {
-	assertEquals("","5.35",TwoC.string(5.35));
-    }
-    @Test
-    public void test_cube() {
-	assertEquals("",125,TwoC.cube(5));
-    }
+    
     @Test
     public void test_round() {
-	assertEquals("",6,TwoC.round(5.5));
+    	testNum = Rational.create(7,2);
+	assertEquals("Round 7/2",4,testNum.round);
+    }
+    
+    @Test
+    public void test_reciprocal() {
+    	testNum = Rational.create(7,2);
+	assertEquals("Reciprocal of 7/2",2/7,testNum.reciprocal);
+    }
+    
+    @Test
+    public void test_sqrt() {
+        testNum = Rational.create(16,1);
+	assertEquals("Square root of 16",4,testNum.sqrt);
+    }
+    
+    @Test
+    public void test_string() {
+    	testNum = Rational.create(7,2);
+	assertEquals("String representation of 7/2","7/2",testNum.string);
+    }
+    
+    @Test
+    public void test_expt() {
+    	testNum = Rational.create(7,2);
+	assertEquals("Exponentiate 7/2 to the third",42.875,testNum.expt);
+    }
+    
+    @Test
+    public void test_add() {
+    	testNum1 = Rational.create(7,2);
+    	testNum2 = Rational.create(3,2);
+	assertEquals("Add 7/2 and 3/2",5,testNum1.add(testNum2));
+    }
+    
+    @Test
+    public void test_multiply() {
+    	testNum = Rational.create(7,2);
+	assertEquals("Multiply 7/2 by 2",7,testNum.multiply(2));
+    }
+    
+    @Test
+    public void test_duplicate() {
+    	testNum = Rational.create(7,2);
+    	testCopy = Rational.duplicate(testNum);
+    	assertEquals("Comparing the two rational numbers",testNum.decimalRep,testCopy.decimalRep);
     }
 }
